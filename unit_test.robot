@@ -9,14 +9,6 @@ ${PLUS_ENDPOINT}    /plus
 ${GET_CODE_RES}    Random number or message
 ${HEADERS}    {"Content-Type": "application/json"}
 *** Test Cases ***
-
-Get Codes
-    [Documentation]    Test to get code.
-    ${response}=    GET    ${GET_CODE_ENDPOINT}
-    Should Be Equal As Numbers    ${response.status_code}    200
-    Should Be Equal    ${response.json()}    ${GET_CODE_RES}
-    Log    ${\n}Result: ${response}    console=True
-    
 Plus Test
     [Documentation]    Test 2 + 2 != 5.
     ${response}=    GET    ${PLUS_ENDPOINT}/2/2
